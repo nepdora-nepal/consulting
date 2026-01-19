@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-white overflow-hidden relative border-t border-gray-100">
+    <section className="py-24  overflow-hidden relative ">
       <div className="container mx-auto px-4">
         <div className="bg-primary rounded-lg p-10 md:p-20 relative overflow-hidden group shadow-2xl shadow-primary/20">
           <div className="relative z-10 max-w-3xl space-y-8">

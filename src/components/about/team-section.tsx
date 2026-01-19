@@ -27,12 +27,12 @@ export default function TeamSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 text-center md:text-left">
           <div className="space-y-4 max-w-2xl">
-            <h2 className="text-sm font-black text-blue-600 uppercase tracking-widest">
+            <h2 className="text-sm font-black text-primary uppercase tracking-widest">
               Our Leadership
             </h2>
             <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-gray-900">
               Meet the experts behind{" "}
-              <span className="text-blue-600">our success.</span>
+              <span className="text-primary">our success.</span>
             </h3>
             <p className="text-lg text-gray-500 font-medium">
               A diverse group of strategic thinkers, data scientists, and
@@ -55,7 +55,7 @@ export default function TeamSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-x-0 bottom-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
-                    <div className="bg-white/95 backdrop-blur-sm p-4 rounded-2xl flex justify-center gap-4 shadow-xl">
+                    <div className="bg-white/95 backdrop-blur-sm p-4 rounded-lg flex justify-center gap-4 shadow-xl">
                       {member.linkedin && (
                         <Link
                           href={member.linkedin}
@@ -75,7 +75,7 @@ export default function TeamSection() {
                       {member.email && (
                         <Link
                           href={`mailto:${member.email}`}
-                          className="text-gray-400 hover:text-blue-600 transition-colors"
+                          className="text-gray-400 hover:text-primary transition-colors"
                         >
                           <Mail className="h-5 w-5" />
                         </Link>
@@ -85,10 +85,10 @@ export default function TeamSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-gray-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-2xl font-black text-gray-900 tracking-tight group-hover:text-primary transition-colors">
                     {member.name}
                   </h4>
-                  <p className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-2">
+                  <p className="text-primary font-black uppercase tracking-widest text-[10px] mb-2">
                     {member.role}
                   </p>
                   <p className="text-sm text-gray-500 font-medium line-clamp-2">

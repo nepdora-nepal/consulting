@@ -1,3 +1,4 @@
+import CTASection from "@/components/about/cta-section";
 import ServicesHeader from "@/components/services/services-header";
 import ServicesManager from "@/components/services/services-manager";
 
@@ -7,6 +8,7 @@ export default function ServicesPage() {
       <div className="container mx-auto px-4 md:px-6">
         <ServicesHeader />
         <ServicesManager />
+        <CTASection />
       </div>
     </div>
   );
