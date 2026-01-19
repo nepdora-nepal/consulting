@@ -29,7 +29,7 @@ export default function CTASection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-16 px-10 rounded-lg border-2 border-white/40 text-white hover:bg-white/10 font-black text-lg"
+                className="h-16 px-10 rounded-lg border-2 border-white/40 text-black hover:bg-white/10 font-black text-lg"
                 asChild
               >
                 <Link href="/services">Our Solutions</Link>

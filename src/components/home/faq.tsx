@@ -24,7 +24,7 @@ const FaqSection = () => {
 
   if (isLoading) {
     return (
-      <section className="py-24 bg-gray-50/50">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Skeleton className="h-10 w-64 mx-auto mb-4" />
@@ -41,7 +41,7 @@ const FaqSection = () => {
   }
 
   return (
-    <section className="py-24 bg-gray-50/50" id="faq">
+    <section className="py-24  " id="faq">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-lg mb-2">
