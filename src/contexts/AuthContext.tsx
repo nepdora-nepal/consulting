@@ -24,7 +24,7 @@ interface AuthContextType {
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const CustomerPublishAuthProvider = ({
@@ -43,7 +43,7 @@ export const CustomerPublishAuthProvider = ({
       try {
         const parsedTokens: AuthTokens = JSON.parse(storedTokens);
         const decodedAccess = jwtDecode<DecodedAccessToken>(
-          parsedTokens.access
+          parsedTokens.access,
         );
 
         if (decodedAccess.exp * 1000 > Date.now()) {
@@ -153,11 +153,12 @@ export const CustomerPublishAuthProvider = ({
   // Helper function to check if a page exists (you might need to implement this based on your API)
   const checkPageExists = async (
     siteUser: string,
-    page: string
+    page: string,
   ): Promise<boolean> => {
     try {
       return page === "home";
     } catch (error) {
+      console.error("Error checking page existence:", error);
       return false;
     }
   };
@@ -240,7 +241,7 @@ export const CustomerPublishAuthProvider = ({
             // This should rarely happen in normal subdomain-based routing
             if (!siteUser) {
               console.warn(
-                "Could not determine subdomain, falling back to user ID"
+                "Could not determine subdomain, falling back to user ID",
               );
               siteUser = loggedInUser.id?.toString() || loggedInUser.email;
             }
@@ -258,7 +259,7 @@ export const CustomerPublishAuthProvider = ({
             } catch (error) {
               console.warn(
                 "Could not check page existence, using fallback:",
-                error
+                error,
               );
               // If page check fails, try home first
               router.push(`/home`);
@@ -270,7 +271,7 @@ export const CustomerPublishAuthProvider = ({
         // In SSR context, we should have access to the original request path
         console.warn("SSR context detected - using fallback redirect");
         router.push(
-          `/publish/${loggedInUser.id?.toString() || loggedInUser.email}/home`
+          `/publish/${loggedInUser.id?.toString() || loggedInUser.email}/home`,
         );
       }
       //eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -302,6 +303,7 @@ export const CustomerPublishAuthProvider = ({
       delete signupData.confirmPassword;
 
       const response = await signupUser(signupData);
+      console.log("Signup response:", response);
 
       // Don't auto-login after signup, just redirect to login page
       toast.success("Account created successfully! Please log in to continue.");

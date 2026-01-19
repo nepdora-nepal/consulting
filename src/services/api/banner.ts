@@ -1,14 +1,16 @@
 import { siteConfig } from "@/config/site";
+import { createHeaders } from "@/utils/headers";
+import { handleApiError } from "@/utils/api-error";
 import {
   CreateBannerWithImagesRequest,
   Banner,
   UpdateBannerWithImagesRequest,
 } from "@/types/banner";
+
 const API_BASE_URL = siteConfig.apiBaseUrl;
 
 const prepareFormData = (
   data: CreateBannerWithImagesRequest | UpdateBannerWithImagesRequest,
-  isUpdate: boolean = false
 ) => {
   const formData = new FormData();
 
@@ -32,7 +34,7 @@ const prepareFormData = (
 
       formData.append(
         `images[${index}]image_alt_description`,
-        image.image_alt_description || ""
+        image.image_alt_description || "",
       );
       formData.append(`images[${index}]link`, image.link || "");
       formData.append(`images[${index}]is_active`, image.is_active.toString());
@@ -51,92 +53,62 @@ const prepareFormData = (
 export const bannerApi = {
   // Get all banners with images
   getBanners: async (): Promise<Banner[]> => {
-
-    const response = await fetch(`${API_BASE_URL}/api/banners/`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch banners");
-    }
+    const response = await fetch(`${API_BASE_URL}/api/banners/`, {
+      headers: createHeaders(),
+    });
+    await handleApiError(response);
     return response.json();
   },
 
   // Get single banner with images
   getBanner: async (id: number): Promise<Banner> => {
-    
-
-    const response = await fetch(`${API_BASE_URL}/api/banners/${id}/`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch banner");
-    }
+    const response = await fetch(`${API_BASE_URL}/api/banners/${id}/`, {
+      headers: createHeaders(),
+    });
+    await handleApiError(response);
     return response.json();
   },
 
   // Create banner with images
   createBannerWithImages: async (
-    data: CreateBannerWithImagesRequest
+    data: CreateBannerWithImagesRequest,
   ): Promise<Banner> => {
-    
-
-    const formData = prepareFormData(data, false);
+    const formData = prepareFormData(data);
 
     const response = await fetch(`${API_BASE_URL}/api/banners/`, {
       method: "POST",
+      headers: createHeaders(true, true),
       body: formData,
-      // Don't set Content-Type header - let browser set it with boundary for multipart/form-data
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      let errorData;
-      try {
-        errorData = JSON.parse(errorText);
-      } catch {
-        errorData = { error: errorText };
-      }
-      throw new Error(`Failed to create banner: ${JSON.stringify(errorData)}`);
-    }
-
+    await handleApiError(response);
     return response.json();
   },
 
   // Update banner with images
   updateBannerWithImages: async (
     id: number,
-    data: UpdateBannerWithImagesRequest
+    data: UpdateBannerWithImagesRequest,
   ): Promise<Banner> => {
-    
-
-    const formData = prepareFormData(data, true);
+    const formData = prepareFormData(data);
 
     const response = await fetch(`${API_BASE_URL}/api/banners/${id}/`, {
       method: "PATCH",
+      headers: createHeaders(true, true),
       body: formData,
-      // Don't set Content-Type header - let browser set it with boundary for multipart/form-data
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      let errorData;
-      try {
-        errorData = JSON.parse(errorText);
-      } catch {
-        errorData = { error: errorText };
-      }
-      throw new Error(`Failed to update banner: ${JSON.stringify(errorData)}`);
-    }
-
+    await handleApiError(response);
     return response.json();
   },
 
   // Delete banner
   deleteBanner: async (id: number): Promise<void> => {
-    
-
     const response = await fetch(`${API_BASE_URL}/api/banners/${id}/`, {
       method: "DELETE",
+      headers: createHeaders(),
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to delete banner");
-    }
+    await handleApiError(response);
   },
 };

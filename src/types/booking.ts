@@ -15,7 +15,7 @@ export interface BookingData {
   status?: "pending" | "confirmed" | "cancelled";
   "whatsapp number"?: string | number | null;
   "license image"?: string;
-  [key: string]: any; // Allow for other dynamic fields
+  [key: string]: unknown; // Allow for other dynamic fields
 }
 
 export interface Booking {

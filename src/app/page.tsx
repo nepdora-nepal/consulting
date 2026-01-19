@@ -1,21 +1,26 @@
+import Hero from "@/components/home/hero";
+import ClientMarquee from "@/components/home/client-marquee";
+import About from "@/components/home/about";
+import Services from "@/components/home/services";
+import Portfolio from "@/components/home/portfolio";
+import Appointment from "@/components/home/appointment";
+import Testimonials from "@/components/home/testimonials";
+import Blogs from "@/components/home/blogs";
+import FaqSection from "@/components/home/faq";
 
 const HomePage: React.FC = () => {
   return (
-    <section className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl font-bold mb-6">Welcome to Our Website</h1>
-        <p className="text-lg text-gray-700 mb-8">
-          Discover amazing content and connect with a vibrant community.
-        </p>
-        <a
-          href="#get-started"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition"
-        >
-          Get Started
-        </a>
-      </div>
-      
-    </section>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Hero />
+      <ClientMarquee />
+      <About />
+      <Services />
+      <Appointment />
+      <Portfolio />
+      <Testimonials />
+      <Blogs />
+      <FaqSection />
+    </main>
   );
 };
 
