@@ -11,9 +11,9 @@ import WhatsAppButton from "@/components/layout/whatsapp-button";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aurum Consulting - Expert Business Strategies",
+  title: "Aura Learn - Empowering Your Educational Journey",
   description:
-    "Professional business consultation services to help you scale and succeed.",
+    "Interactive learning platforms and expert mentorship to help you grow your skills.",
 };
 
 export default function RootLayout({
@@ -24,10 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          inter.className,
-        )}
+        className={cn("min-h-screen bg-white antialiased", inter.className)}
       >
         <QueryProvider>
           <Navbar />

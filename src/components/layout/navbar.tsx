@@ -39,13 +39,13 @@ const Navbar = () => {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
-              alt="Aurum Consulting"
+              alt="Aura Learn"
               width={40}
               height={40}
               className="object-contain"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent hidden sm:inline-block">
-              Aurum Consulting
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent hidden sm:inline-block">
+              Aura Learn
             </span>
           </Link>
 
@@ -55,14 +55,14 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
               >
                 {link.name}
               </Link>
             ))}
             <Link href="/contact">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all">
-                Contact Us
+              <Button className="bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg transition-all">
+                Join Community
               </Button>
             </Link>
           </nav>
@@ -81,12 +81,12 @@ const Navbar = () => {
                   <Link href="/" className="flex items-center gap-2 mb-4">
                     <Image
                       src="/logo.png"
-                      alt="Aurum Consulting"
+                      alt="Aura Learn"
                       width={32}
                       height={32}
                     />
                     <span className="text-lg font-bold text-gray-900">
-                      Aurum Consulting
+                      Aura Learn
                     </span>
                   </Link>
                   <nav className="flex flex-col gap-4">
@@ -94,15 +94,15 @@ const Navbar = () => {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors px-2 py-1 rounded-md hover:bg-gray-50"
+                        className="text-base font-medium text-gray-600 hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-gray-50"
                       >
                         {link.name}
                       </Link>
                     ))}
                     <div className="mt-4">
                       <Link href="/contact" className="w-full">
-                        <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                          Contact Us
+                        <Button className="w-full bg-primary hover:bg-primary/90">
+                          Join Community
                         </Button>
                       </Link>
                     </div>

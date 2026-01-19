@@ -19,7 +19,7 @@ const PricingSkeleton = () => (
     {[1, 2, 3].map((i) => (
       <Card
         key={i}
-        className="border-none shadow-sm rounded-[2.5rem] overflow-hidden"
+        className="border-none shadow-sm rounded-lg overflow-hidden"
       >
         <CardHeader className="p-10 pb-0 space-y-4">
           <Skeleton className="h-4 w-24" />
@@ -59,7 +59,7 @@ export default function PricingList() {
 
   if (pricings.length === 0) {
     return (
-      <div className="text-center py-20 bg-white rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 max-w-2xl mx-auto space-y-6 p-12">
+      <div className="text-center py-20 bg-white rounded-lg shadow-xl shadow-gray-200/50 border border-gray-100 max-w-2xl mx-auto space-y-6 p-12">
         <h3 className="text-3xl font-black text-gray-900 tracking-tighter">
           No Plans Available
         </h3>
@@ -69,7 +69,7 @@ export default function PricingList() {
         </p>
         <Button
           size="lg"
-          className="rounded-2xl h-14 px-8 bg-blue-600 hover:bg-blue-700 font-black shadow-lg shadow-blue-100"
+          className="rounded-2xl h-14 px-8 bg-primary hover:bg-primary/90 font-black shadow-lg shadow-primary/10"
           asChild
         >
           <Link href="/contact">Contact Support</Link>
@@ -83,10 +83,10 @@ export default function PricingList() {
       {pricings.map((plan: Pricing) => (
         <Card
           key={plan.id}
-          className={`relative border-none transition-all duration-500 rounded-[2.5rem] overflow-hidden flex flex-col h-full
+          className={`relative border-none transition-all duration-500 rounded-lg overflow-hidden flex flex-col h-full
               ${
                 plan.is_popular
-                  ? "shadow-2xl shadow-blue-200/50 lg:scale-105 z-10 bg-blue-600 text-white"
+                  ? "shadow-2xl shadow-primary/20 lg:scale-105 z-10 bg-primary text-white"
                   : "shadow-xl shadow-gray-200/50 bg-white text-gray-900 hover:scale-[1.02]"
               }`}
         >
@@ -100,7 +100,7 @@ export default function PricingList() {
 
           <CardHeader className="p-10 pb-4 space-y-4">
             <h3
-              className={`text-2xl font-black tracking-tight ${plan.is_popular ? "text-blue-50" : "text-gray-900"}`}
+              className={`text-2xl font-black tracking-tight ${plan.is_popular ? "text-primary-foreground/90" : "text-gray-900"}`}
             >
               {plan.name}
             </h3>
@@ -109,7 +109,7 @@ export default function PricingList() {
                 ${plan.price}
               </span>
               <span
-                className={`text-lg font-bold opacity-70 ${plan.is_popular ? "text-blue-100" : "text-gray-400"}`}
+                className={`text-lg font-bold opacity-70 ${plan.is_popular ? "text-primary-foreground/70" : "text-gray-400"}`}
               >
                 /month
               </span>
@@ -132,12 +132,12 @@ export default function PricingList() {
                   <li key={idx} className="flex items-start gap-3 group">
                     <div
                       className={`h-6 w-6 rounded-full flex items-center justify-center shrink-0 mt-0.5
-                      ${plan.is_popular ? "bg-white/20 text-white" : "bg-blue-50 text-blue-600"}`}
+                      ${plan.is_popular ? "bg-white/20 text-white" : "bg-primary/10 text-primary"}`}
                     >
                       <Check className="h-3.5 w-3.5 stroke-[3]" />
                     </div>
                     <span
-                      className={`font-bold transition-colors ${plan.is_popular ? "text-blue-50" : "text-gray-700"}`}
+                      className={`font-bold transition-colors ${plan.is_popular ? "text-primary-foreground/90" : "text-gray-700"}`}
                     >
                       {feature.feature}
                     </span>
@@ -151,8 +151,8 @@ export default function PricingList() {
               className={`w-full h-14 rounded-2xl font-black text-lg shadow-lg transition-all
                   ${
                     plan.is_popular
-                      ? "bg-white text-blue-600 hover:bg-blue-50 shadow-blue-800/20"
-                      : "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-100"
+                      ? "bg-white text-primary hover:bg-white/90 shadow-black/5"
+                      : "bg-primary text-white hover:bg-primary/95 shadow-primary/20"
                   }`}
               asChild
             >

@@ -15,9 +15,9 @@ const PortfolioSkeleton = () => (
     {[1, 2, 3].map((i) => (
       <Card
         key={i}
-        className="overflow-hidden border-none shadow-sm h-full flex flex-col rounded-[2.5rem] bg-white"
+        className="overflow-hidden border-none shadow-sm h-full flex flex-col rounded-lg bg-white"
       >
-        <Skeleton className="aspect-[4/3] w-full rounded-t-[2.5rem]" />
+        <Skeleton className="aspect-[4/3] w-full rounded-t-lg" />
         <div className="space-y-4 p-8">
           <Skeleton className="h-6 w-1/3" />
           <Skeleton className="h-8 w-3/4" />
@@ -59,27 +59,26 @@ const Portfolio = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl space-y-6">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-wider">
-              Our Success Stories
+            <div className="inline-block px-5 py-2 rounded-2xl bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest">
+              Student Success Stories
             </div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-tight">
-              Showcasing Our Recent{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Works
-              </span>
+              Inspiring Educational{" "}
+              <span className="text-primary italic">Journeys</span>
             </h2>
-            <p className="text-xl text-gray-500 font-medium leading-relaxed">
-              Explore how we&apos;ve helped businesses transform their ideas
-              into successful digital realities.
+            <p className="text-xl text-gray-600 font-medium leading-relaxed">
+              Explore how our learners have transformed their potential into
+              real-world achievements through dedicated study and expert
+              mentorship.
             </p>
           </div>
           <Button
             variant="ghost"
-            className="group text-blue-600 font-black text-lg p-0 hover:bg-transparent hover:text-blue-700 h-auto gap-2"
+            className="group text-primary font-black text-lg p-0 hover:bg-transparent hover:text-primary/80 h-auto gap-2"
             asChild
           >
             <Link href="/portfolio">
-              View All Projects
+              View All Journeys
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-2" />
             </Link>
           </Button>
@@ -88,10 +87,10 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {portfolios.map((portfolio: PortfolioType) => (
             <div key={portfolio.id} className="group">
-              <Card className="relative overflow-hidden border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] transition-all duration-700 flex flex-col h-full bg-white rounded-[2.5rem] border border-gray-50/50">
+              <Card className="relative overflow-hidden border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] transition-all duration-700 flex flex-col h-full bg-white rounded-lg border border-gray-50/50">
                 <Link
                   href={`/portfolio/${portfolio.slug}`}
-                  className="relative aspect-[4/3] overflow-hidden m-2 rounded-[2rem]"
+                  className="relative aspect-[4/3] overflow-hidden m-2 rounded-lg"
                 >
                   <Image
                     src={
@@ -106,20 +105,20 @@ const Portfolio = () => {
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
                     <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                      <ExternalLink className="h-6 w-6 text-blue-600" />
+                      <ExternalLink className="h-6 w-6 text-primary" />
                     </div>
                   </div>
                 </Link>
 
                 <div className="p-8 pt-6 flex flex-col flex-grow">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
                       {portfolio.category.name}
                     </span>
                   </div>
 
                   <Link href={`/portfolio/${portfolio.slug}`} className="mb-4">
-                    <h3 className="text-2xl font-black text-gray-900 group-hover:text-blue-600 transition-colors leading-tight tracking-tight">
+                    <h3 className="text-2xl font-black text-gray-900 group-hover:text-primary transition-colors leading-tight tracking-tight">
                       {portfolio.title}
                     </h3>
                   </Link>
@@ -134,10 +133,10 @@ const Portfolio = () => {
                   <div className="mt-auto">
                     <Link
                       href={`/portfolio/${portfolio.slug}`}
-                      className="inline-flex items-center text-gray-900 font-bold group/link hover:text-blue-600 transition-colors gap-2"
+                      className="inline-flex items-center text-primary font-black group/link hover:gap-3 transition-all gap-2 uppercase tracking-widest text-sm"
                     >
-                      Case Study
-                      <ArrowRight className="h-5 w-5 transition-transform group-hover/link:translate-x-1" />
+                      Read Story
+                      <ArrowRight className="h-4 w-4 stroke-[3]" />
                     </Link>
                   </div>
                 </div>

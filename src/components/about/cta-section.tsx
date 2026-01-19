@@ -6,20 +6,20 @@ export default function CTASection() {
   return (
     <section className="py-24 bg-white overflow-hidden relative border-t border-gray-100">
       <div className="container mx-auto px-4">
-        <div className="bg-blue-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden group shadow-2xl shadow-blue-200">
+        <div className="bg-primary rounded-lg p-10 md:p-20 relative overflow-hidden group shadow-2xl shadow-primary/20">
           <div className="relative z-10 max-w-3xl space-y-8">
             <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight">
               Ready to build the future{" "}
-              <span className="text-blue-100">together?</span>
+              <span className="text-white/80">together?</span>
             </h2>
-            <p className="text-xl text-blue-50 font-medium">
+            <p className="text-xl text-white/90 font-medium">
               Join hundreds of industry leaders who have already transformed
               their businesses with us.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
                 size="lg"
-                className="h-16 px-10 rounded-2xl bg-white text-blue-600 hover:bg-blue-50 font-black text-lg gap-3 shadow-xl"
+                className="h-16 px-10 rounded-lg bg-white text-primary hover:bg-white/90 font-black text-lg gap-3 shadow-xl"
                 asChild
               >
                 <Link href="/contact">
@@ -29,7 +29,7 @@ export default function CTASection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-16 px-10 rounded-2xl border-2 border-blue-400 text-white hover:bg-blue-500 font-black text-lg"
+                className="h-16 px-10 rounded-lg border-2 border-white/40 text-white hover:bg-white/10 font-black text-lg"
                 asChild
               >
                 <Link href="/services">Our Solutions</Link>

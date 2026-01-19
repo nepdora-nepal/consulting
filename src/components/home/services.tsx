@@ -16,9 +16,9 @@ const ServicesSkeleton = () => {
       {[1, 2, 3].map((i) => (
         <Card
           key={i}
-          className="overflow-hidden border-none shadow-sm h-full flex flex-col rounded-[2.5rem] bg-white"
+          className="overflow-hidden border-none shadow-sm h-full flex flex-col rounded-lg bg-white"
         >
-          <Skeleton className="aspect-[4/3] w-full rounded-t-[2.5rem]" />
+          <Skeleton className="aspect-[4/3] w-full rounded-t-lg" />
           <div className="space-y-4 p-8">
             <Skeleton className="h-8 w-3/4" />
             <Skeleton className="h-20 w-full" />
@@ -87,27 +87,27 @@ const Services = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl space-y-6">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold uppercase tracking-wider">
-              Our Expertise
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider">
+              Educational Expertise
             </div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-tight">
-              Strategic Solutions for Your{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Business
+              Curated Learning Paths for Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                Growth
               </span>
             </h2>
             <p className="text-xl text-gray-500 font-medium leading-relaxed">
-              We offer a comprehensive range of consultation services designed
-              to address your unique business challenges.
+              We offer a wide range of interactive modules designed to help you
+              master new skills and achieve your educational goals.
             </p>
           </div>
           <Button
             variant="ghost"
-            className="group text-blue-600 font-black text-lg p-0 hover:bg-transparent hover:text-blue-700 h-auto gap-2"
+            className="group text-primary font-black text-lg p-0 hover:bg-transparent hover:text-primary/80 h-auto gap-2"
             asChild
           >
             <Link href="/services">
-              Explore All Services
+              Browse All Modules
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-2" />
             </Link>
           </Button>
@@ -116,10 +116,10 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {data.results.map((service: ServicesPost) => (
             <div key={service.id} className="group">
-              <Card className="relative overflow-hidden border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] transition-all duration-700 flex flex-col h-full bg-white rounded-[2.5rem] border border-gray-50/50">
+              <Card className="relative overflow-hidden border-none shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] transition-all duration-700 flex flex-col h-full bg-white rounded-lg border border-gray-50/50">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="relative aspect-[4/3] overflow-hidden m-2 rounded-[2rem]"
+                  className="relative aspect-[4/3] overflow-hidden m-2 rounded-lg"
                 >
                   <Image
                     src={service.thumbnail_image || "/placeholder-service.png"}
@@ -134,7 +134,7 @@ const Services = () => {
 
                 <div className="p-8 pt-6 flex flex-col flex-grow">
                   <Link href={`/services/${service.slug}`} className="mb-4">
-                    <h4 className="text-2xl font-black text-gray-900 group-hover:text-blue-600 transition-colors leading-tight tracking-tight">
+                    <h4 className="text-2xl font-black text-gray-900 group-hover:text-primary transition-colors leading-tight tracking-tight">
                       {service.title}
                     </h4>
                   </Link>
@@ -149,11 +149,11 @@ const Services = () => {
                   <div className="mt-auto">
                     <Button
                       variant="ghost"
-                      className="p-0 h-auto text-blue-600 text-lg font-black hover:bg-transparent hover:text-blue-700 group/btn inline-flex items-center gap-2"
+                      className="p-0 h-auto text-primary text-lg font-black hover:bg-transparent hover:text-primary/80 group/btn inline-flex items-center gap-2"
                       asChild
                     >
                       <Link href={`/services/${service.slug}`}>
-                        Learn More
+                        Explore Path
                         <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-2" />
                       </Link>
                     </Button>

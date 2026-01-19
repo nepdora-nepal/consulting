@@ -44,7 +44,7 @@ const ClientMarquee = () => {
             {clients.map((client: OurClient, index) => (
               <div
                 key={`${client.id}-${index}`}
-                className="mx-8 md:mx-16 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+                className="flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110"
               >
                 {client.logo ? (
                   <div className="relative h-12 w-32 md:h-16 md:w-40">

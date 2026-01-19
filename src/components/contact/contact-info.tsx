@@ -25,50 +25,54 @@ export default function ContactInfo() {
 
         <div className="space-y-4">
           <div className="flex items-start gap-4">
-            <div className="bg-blue-100 p-3 rounded-xl shrink-0">
-              <MapPin className="h-6 w-6 text-blue-600" />
+            <div className="bg-primary/10 p-3 rounded-lg shrink-0">
+              <MapPin className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Our Office</h3>
+              <h3 className="font-semibold text-gray-900">Learning Center</h3>
               <p className="text-gray-600 leading-relaxed">
                 {siteConfig?.address ||
-                  "123 Business Ave, Suite 500, New York, NY 10001"}
+                  "456 Education Way, Learning District, Boston, MA 02110"}
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="bg-green-100 p-3 rounded-xl shrink-0">
-              <Mail className="h-6 w-6 text-green-600" />
+            <div className="bg-secondary/10 p-3 rounded-xl shrink-0">
+              <Mail className="h-6 w-6 text-secondary" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Email Us</h3>
+              <h3 className="font-semibold text-gray-900">Student Support</h3>
               <p className="text-gray-600">
-                {siteConfig?.email || "hello@aurumconsulting.com"}
+                {siteConfig?.email || "learn@auralearn.edu"}
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="bg-purple-100 p-3 rounded-xl shrink-0">
-              <Phone className="h-6 w-6 text-purple-600" />
+            <div className="bg-primary/10 p-3 rounded-xl shrink-0">
+              <Phone className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Call Us</h3>
+              <h3 className="font-semibold text-gray-900">
+                Speak with an Advisor
+              </h3>
               <p className="text-gray-600">
-                {siteConfig?.phone || "+1 (555) 000-0000"}
+                {siteConfig?.phone || "+1 (800) LEARN-NOW"}
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="bg-orange-100 p-3 rounded-xl shrink-0">
-              <Clock className="h-6 w-6 text-orange-600" />
+            <div className="bg-accent/10 p-3 rounded-xl shrink-0">
+              <Clock className="h-6 w-6 text-accent" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Working Hours</h3>
+              <h3 className="font-semibold text-gray-900">
+                Advisor Availability
+              </h3>
               <p className="text-gray-600">
-                {siteConfig?.working_hours || "Mon - Fri, 9:00 AM - 6:00 PM"}
+                {siteConfig?.working_hours || "Mon - Sat, 8:00 AM - 8:00 PM"}
               </p>
             </div>
           </div>

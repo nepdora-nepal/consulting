@@ -21,20 +21,18 @@ const Footer = () => {
               <div className="relative h-10 w-10 bg-white rounded-lg p-1">
                 <Image
                   src="/logo.png"
-                  alt="Aurum Consulting"
+                  alt="Aura Learn"
                   width={40}
                   height={40}
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold text-white">
-                Aurum Consulting
-              </span>
+              <span className="text-xl font-bold text-white">Aura Learn</span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              Empowering businesses with strategic insights and innovative
-              solutions. We help you navigate challenges and seize opportunities
-              for sustainable growth.
+              Empowering learners with interactive tools and expert mentorship.
+              We help you unlock your full potential through accessible,
+              high-quality education.
             </p>
             <div className="flex gap-4 pt-2">
               <Link href="#" className="hover:text-white transition-colors">
@@ -108,7 +106,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-6">
-              Our Services
+              Learning Paths
             </h3>
             <ul className="space-y-3">
               <li>
@@ -157,24 +155,24 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-6">
-              Contact Us
+              Join Our Community
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-sm">
-                  123 Business Avenue, Suite 100
+                  456 Learning Way, Education District
                   <br />
-                  New York, NY 10001
+                  Boston, MA 02110
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-blue-500 shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <Phone className="h-5 w-5 text-primary shrink-0" />
+                <span className="text-sm">+1 (800) LEARN-NOW</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-blue-500 shrink-0" />
-                <span className="text-sm">hello@aurumconsulting.com</span>
+                <Mail className="h-5 w-5 text-primary shrink-0" />
+                <span className="text-sm">learn@auralearn.edu</span>
               </li>
             </ul>
           </div>
@@ -182,8 +180,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 mt-8 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>
-            &copy; {new Date().getFullYear()} Aurum Consulting. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Aura Learn. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

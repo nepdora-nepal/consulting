@@ -62,24 +62,25 @@ const Blogs = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-sm font-semibold tracking-wider text-blue-600 uppercase">
-              Articles & News
+            <h2 className="text-sm font-bold tracking-widest text-primary uppercase">
+              Academic Insights
             </h2>
-            <h3 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Latest Insights & <span className="text-blue-600">Strategy</span>
+            <h3 className="text-3xl font-black tracking-tight text-gray-900 sm:text-4xl">
+              Latest from our{" "}
+              <span className="text-primary italic">Community</span>
             </h3>
-            <p className="text-lg text-gray-600">
-              Stay updated with the latest trends in business consulting,
-              financial strategy, and operational excellence.
+            <p className="text-lg text-gray-600 font-medium">
+              Explore professional advice, student success tips, and the latest
+              trends in interactive learning and skill development.
             </p>
           </div>
           <Button
             variant="outline"
-            className="border-blue-100 text-blue-600 hover:bg-blue-50"
+            className="rounded-2xl border-primary/10 text-primary hover:bg-primary/5 hover:border-primary/20 font-bold transition-all"
             asChild
           >
             <Link href="/blogs" className="gap-2">
-              View All Posts <ArrowRight className="h-4 w-4" />
+              Explore All Articles <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>
@@ -88,42 +89,42 @@ const Blogs = () => {
           {blogs.map((blog: BlogPost) => (
             <Card
               key={blog.id}
-              className="group overflow-hidden border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white rounded-2xl"
+              className="group overflow-hidden border-none shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full bg-white rounded-lg"
             >
               <Link
                 href={`/blogs/${blog.slug}`}
-                className="relative aspect-video overflow-hidden"
+                className="relative aspect-video overflow-hidden m-2 rounded-lg"
               >
                 <Image
                   src={blog.thumbnail_image || "/placeholder-blog.png"}
                   alt={blog.thumbnail_image_alt_description || blog.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 {blog.tags && blog.tags.length > 0 && (
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
+                    <span className="bg-primary/90 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-xl shadow-lg backdrop-blur-sm">
                       {blog.tags[0].name}
                     </span>
                   </div>
                 )}
               </Link>
 
-              <CardHeader className="p-6 pb-2">
-                <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
+              <CardHeader className="p-8 pb-3">
+                <div className="flex items-center gap-4 text-xs text-gray-400 mb-4 font-bold uppercase tracking-widest">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" />
                     {format(new Date(blog.created_at), "MMM d, yyyy")}
                   </div>
                   {blog.author && (
-                    <div className="flex items-center gap-1">
-                      <User className="h-3 w-3" />
+                    <div className="flex items-center gap-1.5">
+                      <User className="h-3.5 w-3.5" />
                       {blog.author.username}
                     </div>
                   )}
                 </div>
                 <Link href={`/blogs/${blog.slug}`}>
-                  <h4 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                  <h4 className="text-xl font-black text-gray-900 group-hover:text-primary transition-colors line-clamp-2 leading-tight tracking-tight">
                     {blog.title}
                   </h4>
                 </Link>
@@ -137,14 +138,14 @@ const Blogs = () => {
                 </p>
               </CardContent>
 
-              <CardFooter className="p-6 pt-0 mt-auto">
+              <CardFooter className="p-8 pt-0 mt-auto">
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-blue-600 font-bold hover:gap-3 transition-all gap-2"
+                  className="p-0 h-auto text-primary font-black hover:gap-3 transition-all gap-2 text-sm uppercase tracking-widest"
                   asChild
                 >
                   <Link href={`/blogs/${blog.slug}`}>
-                    Read Article <ArrowRight className="h-4 w-4" />
+                    Read Article <ArrowRight className="h-4 w-4 stroke-[3]" />
                   </Link>
                 </Button>
               </CardFooter>

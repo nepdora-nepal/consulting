@@ -8,38 +8,38 @@ const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div className="flex flex-col justify-center space-y-8 animate-in fade-in slide-in-from-bottom-5 duration-1000">
             <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-600">
-                Professional Consultation Services
+              <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+                Unlock Your Potential
               </div>
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
-                Transform Your Business with{" "}
-                <span className="text-blue-600">Expert Guidance</span>
+                Master New Skills with{" "}
+                <span className="text-primary">Interactive Learning</span>
               </h1>
               <p className="max-w-[600px] text-lg text-gray-600 md:text-xl leading-relaxed">
-                Unlock your potential with our tailored strategies. We provide
-                the insights you need to scale operations, optimize efficiency,
-                and drive sustainable growth.
+                Experience a new way of learning. Our expert-led courses and
+                personalized mentorship are designed to help you thrive in the
+                digital age.
               </p>
             </div>
             <div className="flex flex-col gap-3 min-[400px]:flex-row">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8"
+                className="bg-primary hover:bg-primary/90 text-white font-semibold px-8"
               >
-                Book a Consultation
+                Start Learning
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-blue-200 text-blue-700 hover:bg-blue-50 font-semibold px-8"
+                className="border-primary/20 text-primary hover:bg-primary/10 font-semibold px-8"
               >
-                Explore Services
+                Explore Courses
               </Button>
             </div>
             <div className="flex items-center space-x-4 text-sm text-gray-500">
               <div className="flex items-center">
                 <svg
-                  className="mr-2 h-5 w-5 text-green-500"
+                  className="mr-2 h-5 w-5 text-secondary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -52,11 +52,11 @@ const Hero = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Trusted by 500+ Clients
+                10k+ Active Learners
               </div>
               <div className="flex items-center">
                 <svg
-                  className="mr-2 h-5 w-5 text-green-500"
+                  className="mr-2 h-5 w-5 text-secondary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -69,16 +69,16 @@ const Hero = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Certified Experts
+                Expert Instructors
               </div>
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[500px] lg:max-w-none animate-in fade-in slide-in-from-right-10 duration-1000 delay-200">
             <div className="relative aspect-square w-full rounded-2xl bg-gray-100/50 p-2 ring-1 ring-gray-200/50 lg:aspect-[4/3]">
-              <div className="absolute inset-0 bg-blue-100/20 rounded-2xl -rotate-6 transform"></div>
+              <div className="absolute inset-0 bg-primary/10 rounded-2xl -rotate-6 transform"></div>
               <Image
                 src="/hero-image.png"
-                alt="Business Team Consultation"
+                alt="Students learning together"
                 fill
                 className="rounded-xl object-cover shadow-2xl transition-all hover:scale-105 duration-500"
                 priority

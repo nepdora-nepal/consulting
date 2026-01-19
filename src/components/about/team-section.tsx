@@ -11,7 +11,7 @@ const TeamSkeleton = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
     {[1, 2, 3, 4].map((i) => (
       <div key={i} className="space-y-4">
-        <Skeleton className="aspect-[4/5] w-full rounded-[2rem]" />
+        <Skeleton className="aspect-[4/5] w-full rounded-lg" />
         <Skeleton className="h-6 w-3/4" />
         <Skeleton className="h-4 w-1/2" />
       </div>
@@ -47,7 +47,7 @@ export default function TeamSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {team.map((member: TEAM) => (
               <div key={member.id} className="group space-y-6">
-                <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-xl shadow-gray-100 group-hover:shadow-2xl transition-all duration-500">
+                <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-xl shadow-gray-100 group-hover:shadow-2xl transition-all duration-500">
                   <Image
                     src={member.photo || "/placeholder-avatar.png"}
                     alt={member.name}
@@ -100,7 +100,7 @@ export default function TeamSection() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-gray-50 rounded-[2.5rem] border border-gray-100 italic font-medium text-gray-400">
+          <div className="text-center py-20 bg-gray-50 rounded-lg border border-gray-100 italic font-medium text-gray-400">
             Our team directory is being updated. Stay tuned!
           </div>
         )}

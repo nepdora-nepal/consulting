@@ -54,16 +54,17 @@ const Testimonials = () => {
   return (
     <section className="py-20 bg-gray-50/50 overflow-hidden" id="testimonials">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12 space-y-4">
-          <h2 className="text-sm font-semibold tracking-wider text-blue-600 uppercase">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-sm font-bold tracking-widest text-primary uppercase">
             Testimonials
           </h2>
-          <h3 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            What Our <span className="text-blue-600">Clients</span> Say
+          <h3 className="text-3xl font-black tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            Success stories from our{" "}
+            <span className="text-primary italic">Learners</span>
           </h3>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover how we&apos;ve helped businesses like yours achieve their
-            goals through strategic consultation.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
+            Join thousands of students who have transformed their careers
+            through our interactive platforms and expert-led mentorship.
           </p>
         </div>
 
@@ -81,9 +82,11 @@ const Testimonials = () => {
                   key={testimonial.id}
                   className="pl-4 md:basis-1/2 lg:basis-1/2"
                 >
-                  <Card className="h-full border-none shadow-sm bg-white rounded-2xl">
-                    <CardContent className="p-8 flex flex-col h-full space-y-6">
-                      <Quote className="h-8 w-8 text-blue-100 fill-blue-50" />
+                  <Card className="h-full border-none shadow-xl shadow-gray-200/50 bg-white rounded-lg hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+                    <CardContent className="p-10 flex flex-col h-full space-y-8">
+                      <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Quote className="h-8 w-8 text-primary fill-primary/10" />
+                      </div>
 
                       <p className="flex-grow text-gray-700 italic leading-relaxed">
                         &quot;{testimonial.comment}&quot;
@@ -95,15 +98,15 @@ const Testimonials = () => {
                             src={testimonial.image || ""}
                             alt={testimonial.name}
                           />
-                          <AvatarFallback className="bg-blue-50 text-blue-600 font-bold">
+                          <AvatarFallback className="bg-primary/10 text-primary font-black">
                             {testimonial.name.substring(0, 2).toUpperCase()}
                           </AvatarFallback>
                         </Avatar>
                         <div>
-                          <div className="font-bold text-gray-900 text-sm">
+                          <div className="font-black text-gray-900 text-base tracking-tight">
                             {testimonial.name}
                           </div>
-                          <div className="text-blue-600 text-xs font-medium uppercase tracking-tight">
+                          <div className="text-primary text-xs font-bold uppercase tracking-widest mt-0.5">
                             {testimonial.designation}
                           </div>
                         </div>
@@ -114,8 +117,8 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 hover:bg-blue-600 hover:text-white border-blue-100" />
-              <CarouselNext className="-right-12 hover:bg-blue-600 hover:text-white border-blue-100" />
+              <CarouselPrevious className="-left-14 h-12 w-12 rounded-lg hover:bg-primary hover:text-white border-primary/10 transition-all font-bold" />
+              <CarouselNext className="-right-14 h-12 w-12 rounded-lg hover:bg-primary hover:text-white border-primary/10 transition-all font-bold" />
             </div>
           </Carousel>
         </div>

@@ -62,7 +62,7 @@ export default function BlogManager() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
           <Input
             placeholder="Search articles..."
-            className="pl-12 h-12 bg-white border-gray-100 rounded-xl shadow-sm focus:ring-blue-500"
+            className="pl-12 h-12 bg-white border-gray-100 rounded-lg shadow-sm focus-visible:ring-primary"
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -74,10 +74,10 @@ export default function BlogManager() {
         <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
           <Badge
             variant={selectedTag === null ? "default" : "outline"}
-            className={`cursor-pointer px-4 py-2 rounded-lg text-sm transition-all ${
+            className={`cursor-pointer px-5 py-2.5 rounded-lg text-sm font-bold transition-all ${
               selectedTag === null
-                ? "bg-blue-600 hover:bg-blue-700 shadow-md"
-                : "hover:border-blue-200 hover:bg-blue-50"
+                ? "bg-primary hover:bg-primary/90 shadow-md"
+                : "hover:border-primary/20 hover:bg-primary/5"
             }`}
             onClick={() => {
               setSelectedTag(null);
@@ -93,10 +93,10 @@ export default function BlogManager() {
               <Badge
                 key={tag.id}
                 variant={selectedTag === tag.name ? "default" : "outline"}
-                className={`cursor-pointer px-4 py-2 rounded-lg text-sm transition-all ${
+                className={`cursor-pointer px-5 py-2.5 rounded-lg text-sm font-bold transition-all ${
                   selectedTag === tag.name
-                    ? "bg-blue-600 hover:bg-blue-700 shadow-md"
-                    : "hover:border-blue-200 shadow-sm hover:bg-blue-50"
+                    ? "bg-primary hover:bg-primary/90 shadow-md"
+                    : "hover:border-primary/20 shadow-sm hover:bg-primary/5"
                 }`}
                 onClick={() => {
                   setSelectedTag(tag.name);
@@ -161,7 +161,7 @@ export default function BlogManager() {
                   />
                   {blog.tags && blog.tags.length > 0 && (
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-blue-600 text-white shadow-lg border-none">
+                      <Badge className="bg-primary text-white shadow-lg border-none font-bold rounded-xl px-3 py-1">
                         {blog.tags[0].name}
                       </Badge>
                     </div>
@@ -182,7 +182,7 @@ export default function BlogManager() {
                     )}
                   </div>
                   <Link href={`/blogs/${blog.slug}`}>
-                    <h4 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                    <h4 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                       {blog.title}
                     </h4>
                   </Link>
@@ -199,11 +199,11 @@ export default function BlogManager() {
                 <CardFooter className="p-6 pt-0 mt-auto">
                   <Button
                     variant="link"
-                    className="p-0 h-auto text-blue-600 font-bold hover:gap-3 transition-all gap-2"
+                    className="p-0 h-auto text-primary font-bold hover:gap-3 transition-all gap-2"
                     asChild
                   >
                     <Link href={`/blogs/${blog.slug}`}>
-                      Read Full Story <ArrowRight className="h-4 w-4" />
+                      Read Article <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -216,7 +216,7 @@ export default function BlogManager() {
             <div className="flex justify-center items-center gap-4 mt-16 pb-8">
               <Button
                 variant="outline"
-                className="rounded-xl h-12 w-12 p-0 border-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
+                className="rounded-lg h-12 w-12 p-0 border-gray-100 text-gray-600 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
                 disabled={page === 1}
                 onClick={() => setPage(page - 1)}
               >
@@ -227,10 +227,10 @@ export default function BlogManager() {
                   <Button
                     key={i}
                     variant={page === i + 1 ? "default" : "ghost"}
-                    className={`h-12 w-12 rounded-xl font-bold ${
+                    className={`h-12 w-12 rounded-lg font-bold transition-all ${
                       page === i + 1
-                        ? "bg-blue-600 text-white shadow-lg shadow-blue-200"
-                        : "text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+                        ? "bg-primary text-white shadow-lg shadow-primary/20"
+                        : "text-gray-400 hover:bg-primary/5 hover:text-primary"
                     }`}
                     onClick={() => setPage(i + 1)}
                   >
@@ -240,7 +240,7 @@ export default function BlogManager() {
               </div>
               <Button
                 variant="outline"
-                className="rounded-xl h-12 w-12 p-0 border-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
+                className="rounded-lg h-12 w-12 p-0 border-gray-100 text-gray-600 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
                 disabled={page === totalPages}
                 onClick={() => setPage(page + 1)}
               >

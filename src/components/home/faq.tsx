@@ -44,18 +44,19 @@ const FaqSection = () => {
     <section className="py-24 bg-gray-50/50" id="faq">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center justify-center p-2 bg-blue-50 rounded-lg mb-2">
-            <HelpCircle className="h-5 w-5 text-blue-600 mr-2" />
-            <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">
-              Support
+          <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-lg mb-2">
+            <HelpCircle className="h-6 w-6 text-primary mr-2" />
+            <span className="text-sm font-bold text-primary uppercase tracking-widest">
+              Learning Support
             </span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            Frequently Asked <span className="text-blue-600">Questions</span>
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            Everything you need to{" "}
+            <span className="text-primary italic">know</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Got questions? We have answers. If you can&apos;t find what
-            you&apos;re looking for, feel free to reach out to our support team.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+            Find answers to common questions about our curriculum, mentorship,
+            and community.
           </p>
         </div>
 
@@ -65,7 +66,7 @@ const FaqSection = () => {
               <AccordionItem
                 key={faq.id}
                 value={`item-${faq.id}`}
-                className="border-none bg-white rounded-2xl px-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="border-none bg-white rounded-lg px-8 shadow-sm hover:shadow-md transition-all duration-300 mb-4"
               >
                 <AccordionTrigger className="text-left font-bold text-gray-900 hover:no-underline py-6">
                   {faq.question}

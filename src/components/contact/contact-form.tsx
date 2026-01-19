@@ -54,7 +54,7 @@ export default function ContactForm() {
 
   return (
     <div className="lg:col-span-2">
-      <Card className="border-none shadow-xl rounded-3xl overflow-hidden">
+      <Card className="border-none shadow-xl rounded-lg overflow-hidden">
         <CardContent className="p-8 md:p-12">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -70,7 +70,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           placeholder="John Doe"
-                          className="bg-gray-50 border-gray-100 rounded-xl h-12"
+                          className="bg-gray-50 border-gray-100 rounded-lg h-12"
                           {...field}
                         />
                       </FormControl>
@@ -89,7 +89,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           placeholder="john@example.com"
-                          className="bg-gray-50 border-gray-100 rounded-xl h-12"
+                          className="bg-gray-50 border-gray-100 rounded-lg h-12"
                           {...field}
                         />
                       </FormControl>
@@ -110,7 +110,7 @@ export default function ContactForm() {
                     <FormControl>
                       <Input
                         placeholder="+1 (555) 000-0000"
-                        className="bg-gray-50 border-gray-100 rounded-xl h-12"
+                        className="bg-gray-50 border-gray-100 rounded-lg h-12"
                         {...field}
                       />
                     </FormControl>
@@ -130,7 +130,7 @@ export default function ContactForm() {
                     <FormControl>
                       <Textarea
                         placeholder="Tell us about your project or inquiry..."
-                        className="bg-gray-50 border-gray-100 rounded-xl min-h-[160px] resize-none"
+                        className="bg-gray-50 border-gray-100 rounded-lg min-h-[160px] resize-none"
                         {...field}
                       />
                     </FormControl>
@@ -141,7 +141,7 @@ export default function ContactForm() {
 
               <Button
                 type="submit"
-                className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-lg font-bold rounded-xl transition-all shadow-lg shadow-blue-200"
+                className="w-full h-14 bg-primary hover:bg-primary/90 text-lg font-bold rounded-lg transition-all shadow-lg shadow-primary/20"
                 disabled={isPending}
               >
                 {isPending ? (
