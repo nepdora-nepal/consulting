@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 import { CheckCircle2 } from "lucide-react";
 
 const About = () => {
@@ -23,8 +23,10 @@ const About = () => {
           {/* Image Column */}
           <div className="flex-1 relative w-full max-w-[600px] animate-in fade-in slide-in-from-left-10 duration-1000">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl shadow-gray-200/50 border-4 border-white">
-              <Image
+              <ImageWithFallback
+                id="about-home"
                 src="/about-image.png"
+                fallbackSrc="/about-image.png"
                 alt="Students studying together"
                 fill
                 className="object-cover transition-transform hover:scale-105 duration-700"

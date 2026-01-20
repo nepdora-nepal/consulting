@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
@@ -28,17 +28,18 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Image
+            <ImageWithFallback
+              id="navbar-logo"
               src="/logo.png"
+              fallbackSrc="/logo.png"
               alt="Aura Learn"
               width={40}
               height={40}
@@ -79,8 +80,10 @@ const Navbar = () => {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col gap-6 mt-6">
                   <Link href="/" className="flex items-center gap-2 mb-4">
-                    <Image
+                    <ImageWithFallback
+                      id="navbar-mobile-logo"
                       src="/logo.png"
+                      fallbackSrc="/logo.png"
                       alt="Aura Learn"
                       width={32}
                       height={32}

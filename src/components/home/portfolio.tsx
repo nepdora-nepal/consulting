@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { usePortfolios } from "@/hooks/use-portfolio";
 import { Portfolio as PortfolioType } from "@/types/portfolio";
@@ -92,10 +92,12 @@ const Portfolio = () => {
                   href={`/portfolio/${portfolio.slug}`}
                   className="relative aspect-[4/3] overflow-hidden m-2 rounded-lg"
                 >
-                  <Image
+                  <ImageWithFallback
+                    id={`portfolio-${portfolio.id}`}
                     src={
                       portfolio.thumbnail_image || "/placeholder-portfolio.png"
                     }
+                    fallbackSrc="/placeholder-portfolio.png"
                     alt={
                       portfolio.thumbnail_image_alt_description ||
                       portfolio.title

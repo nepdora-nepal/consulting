@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 import { Target, Users } from "lucide-react";
 import { SiteConfig } from "@/types/site-config";
 
@@ -13,8 +13,10 @@ export default function StorySection({ siteConfig }: StorySectionProps) {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative group">
             <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-lg overflow-hidden shadow-2xl z-10">
-              <Image
+              <ImageWithFallback
+                id="about-story"
                 src="/about-image.png"
+                fallbackSrc="/about-image.png"
                 alt="Our Office"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

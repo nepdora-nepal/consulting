@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 import {
   Facebook,
   Twitter,
@@ -19,8 +19,10 @@ const Footer = () => {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-10 w-10 bg-white rounded-lg p-1">
-                <Image
+                <ImageWithFallback
+                  id="footer-logo"
                   src="/logo.png"
+                  fallbackSrc="/logo.png"
                   alt="Aura Learn"
                   width={40}
                   height={40}
