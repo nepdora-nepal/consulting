@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
+import ImageWithFallback from "@/components/common/ImageWithFallback";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-24 lg:py-32">
@@ -76,13 +76,15 @@ const Hero = () => {
           <div className="relative mx-auto w-full max-w-[500px] lg:max-w-none animate-in fade-in slide-in-from-right-10 duration-1000 delay-200">
             <div className="relative aspect-square w-full rounded-2xl bg-gray-100/50 p-2 ring-1 ring-gray-200/50 lg:aspect-[4/3]">
               <div className="absolute inset-0 bg-primary/10 rounded-2xl -rotate-6 transform"></div>
-              <Image
+                 <ImageWithFallback
+                id="hero-image"
                 src="/hero-image.png"
+                fallbackSrc="/hero-image.png"
                 alt="Students learning together"
                 fill
                 className="rounded-xl object-cover shadow-2xl transition-all hover:scale-105 duration-500"
-                priority
               />
+           
             </div>
           </div>
         </div>
